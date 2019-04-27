@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace LoginPage.Properties
+namespace FinancialApp.Properties
 {
 
 
