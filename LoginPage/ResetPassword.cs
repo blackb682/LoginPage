@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace FinancialApp
 {
@@ -30,6 +31,14 @@ namespace FinancialApp
 		private void NewPassword_Click(object sender, EventArgs e)
 		{
 			Form loginPage = new LoginPage();
+
+			string inputedUsername = UserName.Text;
+			string username = SignIn.GetUsername(inputedUsername);
+			string nPassword = NewPw.Text;
+			string cPassword = ConfPassword.Text;
+
+
+
 
 			Hide();
 			loginPage.Show();

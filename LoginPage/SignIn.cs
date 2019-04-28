@@ -11,7 +11,9 @@ namespace FinancialApp
 
 			SqlConnection connection = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; Initial Catalog = financial; Integrated Security = True; Pooling = False;");
 			SqlCommand cmdUsername = new SqlCommand(usernameSQL, connection);
+
 			connection.Open();
+
 			using (SqlDataReader reader = cmdUsername.ExecuteReader())
 			{
 				while (reader.Read())
@@ -26,7 +28,6 @@ namespace FinancialApp
 		{
 			string password = "";
 			string passwordSQL = "Select password From UsersDatabase where userName = '" + inputedUsername + "';";
-
 			SqlConnection connection = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; Initial Catalog = financial; Integrated Security = True; Pooling = False;");
 			SqlCommand cmdPassword = new SqlCommand(passwordSQL, connection);
 			connection.Open();
