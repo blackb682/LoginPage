@@ -41,14 +41,18 @@ namespace FinancialApp
 		public void LoginButton_Click(object sender, EventArgs e)
 		{
 			Form home = new Home();
-			DBConnection.OpenSqlConnection();
-			
-			
-			
+			string inputedUserName = tUserName.Text;
+			string inputedPassword = tPassword.Text;
+			DBLogin.SqlLogin(inputedUserName, inputedPassword);
 			Hide();
 			home.Show();
 			
 			
+		}
+
+		private void LoginPage_Load(object sender, EventArgs e)
+		{
+
 		}
 	}
 }

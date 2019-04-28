@@ -11,43 +11,36 @@ namespace FinancialApp
 	{
 		private const string V = "Data Source = MSSQLLocalDB; Initial Catalog = financial; Integrated Security = True; Pooling = False;";
 
-		public static void OpenSqlConnection()
-		{
-			string connectionString = GetConnectionString();
+	}
 
-			using (SqlConnection connection = new SqlConnection())
+	public class DBLogin
+	{
+		public static string SqlLogin(string inputedUserName, string inputedPassword)
+		{
+			SqlConnection connection = new SqlConnection(@"Data Source = MSSQLLocalDB; Initial Catalog = financial; Integrated Security = True; Pooling = False;");
+
+			string username = "Select username From financial where username =" + inputedUserName + ";";
+			string password = "Select password From financial where username =" + inputedUserName + ";";
+			string rLogin = "";
+			bool status = false;
+
+			SqlCommand cmd = new SqlCommand(username, connection);
+			connection.Open();
+
+			if (inputedUserName != username)
 			{
-				connection.ConnectionString = connectionString;
-
-				connection.Open();
-
-				Console.WriteLine("State: {0}", connection.State);
-				Console.WriteLine("ConnectionString: {0}",
-					connection.ConnectionString);
+				rLogin = "Usuário não cadastrado";
+				status = false;
 			}
-		}
-
-		public static void CloseSqlConnection()
-		{
-			string connectionString = GetConnectionString();
-
-			using (SqlConnection connection = new SqlConnection())
+			else 
 			{
-				connection.ConnectionString = connectionString;
+				if (inputedPassword != password)
+				{
 
-				connection.Close();
-
-				Console.WriteLine("State: {0}", connection.State);
-				Console.WriteLine("ConnectionString: {0}",
-					connection.ConnectionString);
+				}
 			}
-		}
 
-		static private string GetConnectionString()
-		{
-			// To avoid storing the connection string in your code, 
-			// you can retrieve it from a configuration file.
-			return V;
 		}
+		
 	}
 }
