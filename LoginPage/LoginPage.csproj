@@ -46,7 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DBConnection.cs" />
+    <Compile Include="SignIn.cs" />
     <Compile Include="Home.cs">
       <SubType>Form</SubType>
     </Compile>

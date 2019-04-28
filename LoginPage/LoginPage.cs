@@ -1,13 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
 
 namespace FinancialApp
 {
@@ -43,11 +36,19 @@ namespace FinancialApp
 			Form home = new Home();
 			string inputedUserName = tUserName.Text;
 			string inputedPassword = tPassword.Text;
-			DBLogin.SqlLogin(inputedUserName, inputedPassword);
-			Hide();
-			home.Show();
+			string username;
+			string password;
 			
-			
+			username = SignIn.GetUsername(inputedUserName);
+			password = SignIn.GetPassword(inputedUserName);
+
+			MessageBox.Show(password + "\n" + username);
+
+			if (inputedUserName == "")
+			{
+				MessageBox.Show(")
+			}
+
 		}
 
 		private void LoginPage_Load(object sender, EventArgs e)
