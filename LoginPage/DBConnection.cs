@@ -10,22 +10,21 @@ namespace FinancialApp
 	class DBConnection
 	{
 		private const string V = "Data Source = MSSQLLocalDB; Initial Catalog = financial; Integrated Security = True; Pooling = False;";
-
 	}
 
 	public class DBLogin
 	{
 		public static string SqlLogin(string inputedUserName, string inputedPassword)
 		{
-			SqlConnection connection = new SqlConnection(@"Data Source = MSSQLLocalDB; Initial Catalog = financial; Integrated Security = True; Pooling = False;");
-
 			string username = "Select username From financial where username =" + inputedUserName + ";";
 			string password = "Select password From financial where username =" + inputedUserName + ";";
-			string rLogin = "";
+			string rLogin;
 			bool status = false;
 
+			SqlConnection connection = new SqlConnection(@"Data Source = MSSQLLocalDB; Initial Catalog = financial; Integrated Security = True; Pooling = False;");
 			SqlCommand cmd = new SqlCommand(username, connection);
 			connection.Open();
+			SqlDataReader reader = cmd.ExecuteReader();
 
 			if (inputedUserName != username)
 			{
