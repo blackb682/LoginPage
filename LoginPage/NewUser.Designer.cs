@@ -1,6 +1,6 @@
 ﻿namespace LoginPage
 {
-	partial class Form1
+	partial class NewUser
 	{
 		/// <summary>
 		/// Required designer variable.
@@ -28,10 +28,17 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.components = new System.ComponentModel.Container();
+			this.SuspendLayout();
+			// 
+			// NewUser
+			// 
+			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(800, 450);
-			this.Text = "Form1";
+			this.Name = "NewUser";
+			this.Text = "New user";
+			this.ResumeLayout(false);
+
 		}
 
 		#endregion
