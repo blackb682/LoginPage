@@ -1,13 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
 
 namespace FinancialApp
 {
@@ -37,11 +29,44 @@ namespace FinancialApp
 			string nPassword = NewPw.Text;
 			string cPassword = ConfPassword.Text;
 
+			if (inputedUsername == "")
+			{
+				MessageBox.Show("I think you forgot to tell me your username.\n" +
+					"Please fill the username field =)", "Error =(",
+					MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
+			else if (inputedUsername != username)
+			{
+				MessageBox.Show("I didn't found this username.\n" +
+					"Could you please tell me it again? =)", "Error =(",
+					MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
+			else
+			{
+				if (nPassword == "")
+				{
+					MessageBox.Show("You must fill the new password field.\n" +
+						"Could you please tell me it again? =)", "Error =(",
+						MessageBoxButtons.OK, MessageBoxIcon.Error);
+				}
+				else if (nPassword != cPassword)
+				{
+					MessageBox.Show("The 'New Password' and 'Confirm Password' fields don't match."
+						, "Error =(",
+						MessageBoxButtons.OK, MessageBoxIcon.Error);
+				}
+				else
+				{
+					RestorePassword.InsertNewPassword(username, nPassword);
 
+					MessageBox.Show("Your password were reseted! =D\nPlease sign in again!"
+						, "YAY =)",
+						MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-
-			Hide();
-			loginPage.Show();
+					Hide();
+					loginPage.Show();
+				}
+			}
 		}
 	}
 }

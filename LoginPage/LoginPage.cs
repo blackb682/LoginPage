@@ -85,5 +85,10 @@ namespace FinancialApp
 		{
 
 		}
+
+		private void SignUpBtn_Click(object sender, EventArgs e)
+		{
+
+		}
 	}
 }

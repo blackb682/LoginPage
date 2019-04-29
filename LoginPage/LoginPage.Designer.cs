@@ -34,6 +34,7 @@
 			this.tPassword = new System.Windows.Forms.TextBox();
 			this.LoginButton = new System.Windows.Forms.Button();
 			this.ResetPassword = new System.Windows.Forms.Label();
+			this.SignUpBtn = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
 			// label1
@@ -76,7 +77,7 @@
 			// LoginButton
 			// 
 			this.LoginButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.LoginButton.Location = new System.Drawing.Point(329, 328);
+			this.LoginButton.Location = new System.Drawing.Point(232, 328);
 			this.LoginButton.Name = "LoginButton";
 			this.LoginButton.Size = new System.Drawing.Size(143, 30);
 			this.LoginButton.TabIndex = 3;
@@ -99,11 +100,23 @@
 			this.ResetPassword.MouseLeave += new System.EventHandler(this.ResetPassword_MouseLeave);
 			this.ResetPassword.MouseHover += new System.EventHandler(this.ResetPassword_MouseHover);
 			// 
+			// SignUpBtn
+			// 
+			this.SignUpBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
+			this.SignUpBtn.Location = new System.Drawing.Point(425, 328);
+			this.SignUpBtn.Name = "SignUpBtn";
+			this.SignUpBtn.Size = new System.Drawing.Size(143, 30);
+			this.SignUpBtn.TabIndex = 5;
+			this.SignUpBtn.Text = "Sign Up";
+			this.SignUpBtn.UseVisualStyleBackColor = true;
+			this.SignUpBtn.Click += new System.EventHandler(this.SignUpBtn_Click);
+			// 
 			// LoginPage
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(800, 450);
+			this.Controls.Add(this.SignUpBtn);
 			this.Controls.Add(this.ResetPassword);
 			this.Controls.Add(this.LoginButton);
 			this.Controls.Add(this.tPassword);
@@ -126,6 +139,7 @@
 		private System.Windows.Forms.TextBox tPassword;
 		private System.Windows.Forms.Button LoginButton;
 		private System.Windows.Forms.Label ResetPassword;
+		private System.Windows.Forms.Button SignUpBtn;
 	}
 }
 
