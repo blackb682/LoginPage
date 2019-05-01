@@ -16,5 +16,11 @@ namespace FinancialApp
 		{
 			InitializeComponent();
 		}
+
+		private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+		{
+			menuStrip1.Width = toolStripTextBox1.Width;
+			toolStripTextBox1.Visible = true;
+		}
 	}
 }
